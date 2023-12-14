@@ -1,0 +1,21 @@
+{
+  "name": "m-cart",
+  "version": "1.0.0",
+  "description": "A E-commerce web application, tried to copy the UI of Amazon, Flipkart and other E-commerce sites, the basic purpose to build this project is to learn bakcend development with integration of frontend as well as payment methods integration",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "MohammedHassan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "prettier": "^3.1.1"
+  }
+}
