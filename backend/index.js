@@ -1,8 +1,12 @@
-const express = require('express')
+import { config as configDotenv  } from 'dotenv';
+import express from 'express';
 
-const app = express()
+configDotenv();
 
-app.listen(3000, () => {
+const app = express();
 
-    console.log('Server is Up ')
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+
+    console.log('Server is Up at', PORT);
 })
