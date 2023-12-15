@@ -1,17 +1,24 @@
-:root {
 
- 
+/* text colors */
+:root {
+    
+ --primary-text: black;
+ --secondary-text: #333;
+ --white-primary: #fff;
+ --white-secondary: #DDD;
 }
 
+/* background */
 :root {
 
+    --primary-bg: #232F3E;
+    --secondary-bg: #37475A;
+    --secondary-bg-2: #465364;
 }
 
+/* border */
 :root {
 
+    --border: rgb(211, 211, 211);
 }
 
-
-:root {
-
-}
