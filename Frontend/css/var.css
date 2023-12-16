@@ -19,6 +19,6 @@
 /* border */
 :root {
 
-    --border: rgb(211, 211, 211);
+    --border-primary: #DDD;
 }
 
