@@ -2,8 +2,9 @@
 /* text colors */
 :root {
     
- --primary-text: black;
+ --primary-text: #111;
  --secondary-text: #333;
+ --text-2: #767676;
  --white-primary: #fff;
  --white-secondary: #DDD;
 }
@@ -20,5 +21,6 @@
 :root {
 
     --border-primary: #DDD;
+    --border-2: #c40000;
 }
 
