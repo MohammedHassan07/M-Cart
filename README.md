@@ -1,6 +1,6 @@
 # MCart
 
-MCart is a E-commerce web application in HTML, CSS, Javascript in frontend and Express, MongoDB in backend with Payment Integration
+MCart is a E-commerce web application built using HTML, CSS, Javascript in frontend and Express, MongoDB in backend with Payment Integration
 
 ## Installation
 
