@@ -1,0 +1,24 @@
+@import url(./var.css);
+
+.mobile-container {
+
+    gap: 6px;
+}
+
+#select-country-code {
+    
+    width: 78px;
+    height: 26px;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 3px 6px;
+    color: black;
+    font-size: 12px;
+    background: white;
+    cursor: pointer;
+}
+
+.mobile {
+
+    width: 100%;
+}
