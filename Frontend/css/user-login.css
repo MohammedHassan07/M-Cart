@@ -13,6 +13,7 @@ main {
     border: 1px solid var(--border-2);
     border-radius: 7px;
     gap: 25px;
+    display: none;
 }
 
 .warning-img {
@@ -37,7 +38,6 @@ main {
 
     font-size: 12px;
     color: black;
-
 }
 
 

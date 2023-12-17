@@ -101,6 +101,7 @@
 
 .form-container {
 
+    margin-top: 9px;
     width: 29vw;
     border: 2px solid var(--border-primary);
     border-radius: 7px;

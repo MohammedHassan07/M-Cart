@@ -20,7 +20,7 @@
         </div>
 
         <!-- error -->
-        <div class="flex error-container">
+        <div id="error-box" class="error-container">
             <div class="warning-img">
                 <img src="../images/icons/warning.png" alt="">
             </div>
@@ -32,14 +32,14 @@
         </div>
 
         <!-- form -->
-        <div class="column-container form-container mt-15">
+        <div class="column-container form-container">
             <form class="log-in-form">
                 <div style="font-size: 2em;">Sign in</div>
 
                 <div class="mt-15">
 
                     <label class="input-label">Email</label>
-                    <input class="mt-5" type="text">
+                    <input id="email-input" class="mt-5" type="text">
                 </div>
 
                 <div class="button-container mt-9">
@@ -77,14 +77,11 @@
         </div>
     </main>
 
-    <!-- script -->
-    <footer style="height: 30vh;">
-
-        
-    </footer>
+   <!-- footer -->
+    <footer style="height: 30vh;">Footer</footer>
 
 <!-- script -->
-<script src="../javascript/login.js"></script>
+<script type="module" src="../javascript/login.js"></script>
 </body>
 
 </html>
