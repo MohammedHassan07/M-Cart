@@ -36,6 +36,16 @@
     text-align: center;
 }
 
+/* height and width */
+.wp-100 {
+
+    width: 100%;
+}
+.hp-100 {
+
+    height: 100%;
+}
+
 /* margin */
 .mt-2 {
 
@@ -54,6 +64,10 @@
 
 .mt-10 {
     margin-top: 10px;
+}
+
+.mt-12 {
+    margin-top: 12px;
 }
 
 .mt-14 {
@@ -97,8 +111,13 @@
     gap: 17px;
 }
 
-/* componetns */
+/* font size */
+.fs-21 {
 
+    font-size: 21px;
+}
+
+/* componetns */
 .form-container {
 
     margin-top: 9px;
@@ -196,6 +215,54 @@ input {
 
     width: 12px;
     height: 12px;
+}
+
+.card {
+
+    background-color: var(--white-primary);
+   
+    max-width: 19em;
+    height: 27em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px 22px;
+}
+
+.slider-container {
+
+    width: 100%;
+    height: 45vh;
+    background-color: var(--white-secondary);
+    padding: 0px 46px;
+}
+
+.slider {
+
+    background-color: var(--white-primary);
+    gap: 8px;
+}
+
+.slider-card{
+
+    width: 12em;
+    height: 12em;
+    cursor: pointer;
+}
+
+.slider-button {
+
+    position: relative;
+}
+
+.slider-btn-img {
+
+    position: absolute;
+    width: 62px;
+    height: 113px;
+    /* top: 0; */
+    bottom: 0;
 }
 
 /* labels, texts */
