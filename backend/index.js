@@ -16,5 +16,7 @@ app.listen(PORT, () => {
 // connect to database
 connect()
 
+app.use(express.json())
+
 // routes
 app.use('/user', userRoute.default)

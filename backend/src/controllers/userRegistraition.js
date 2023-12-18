@@ -8,41 +8,42 @@ const register = async (req, res) => {
     try {
 
         const { name, email, password, mobile, type } = req.body
+      
 
         let user;
         if (type === email) {
 
-
-            user = await userModel.findOne(email)
+            user = await userModel.findOne({ email })
         } else {
 
-            user = await userModel.findOne(mobile)
+            user = await userModel.findOne({ mobile })
         }
         if (user) {
 
             res.status(401).json({ message: `User With this ${type} is Already Registered` })
         } else {
 
-            const hash = hashPassword(password)
+            const pass = await hashPassword(password)
 
+            let data;
             if (type === email) {
 
-                data = { name: name, email: email, password: hash }
+                data = { name: name, email: email, password: pass }
             } else {
 
-                data = { name: name, mobile: mobile, password: hash }
+                data = { name: name, mobile: mobile, password: pass }
             }
             const userData = userModel(data)
 
-            console.log(userData)
+            // console.log(userData)
 
             const response = await userData.save()
 
             // generate jwt
-            const token = generateToken(email || mobile)
+            const token = await generateToken(email || mobile)
 
             res.status(201).json({ message: 'Success', token: token, data: response })
-            console.log(response)
+            // console.log(response)
         }
 
     } catch (error) {

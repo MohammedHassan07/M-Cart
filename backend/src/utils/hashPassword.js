@@ -1,5 +1,5 @@
 
-import hash  from 'bcryptjs'
+import bcryptjs  from 'bcryptjs'
 import { configDotenv } from 'dotenv'
 configDotenv()
 
@@ -8,7 +8,10 @@ const hashPassword = async (password) => {
 
     try{
 
-        const hashPassword = await hash(password, process.env.HASH_SECRET_SALT)
+        const salt = bcryptjs.genSaltSync(10)
+        
+        const hashPassword = await bcryptjs.hash(password, salt)
+        
         return hashPassword
     }catch(error){
 

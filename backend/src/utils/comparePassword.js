@@ -1,8 +1,9 @@
-import compare  from 'bcryptjs'
+import bcryptjs  from 'bcryptjs'
 
 const comparePassword = async (password) => {
 
-    const valid = await compare(password, process.env.HASH_SECRET_SALT)
+    const salt = bcryptjs.genSaltSync(10)
+    const valid = await bcryptjs.compare(password, salt)
 
     if (valid) {
 

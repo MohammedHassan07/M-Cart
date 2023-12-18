@@ -1,4 +1,4 @@
-import  sign  from 'jsonwebtoken'
+import  jwt  from 'jsonwebtoken'
 import { configDotenv } from 'dotenv'
 configDotenv()
 
@@ -8,7 +8,7 @@ const generateToken = async (data) => {
     // data is email or mobile
     try {
 
-        const token = await sign(data, process.env.SECRET_JWT_KEY)
+        const token = await jwt.sign(data, process.env.SECRET_JWT_KEY)
         return token
     } catch (error) {
 

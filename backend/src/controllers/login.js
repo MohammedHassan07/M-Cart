@@ -8,6 +8,7 @@ const login = async (req, res) => {
 
     try {
 
+        // data is email or mobile
         const { data, password, type } = req.body
 
         let user;
@@ -26,7 +27,8 @@ const login = async (req, res) => {
             if (valid) {
 
                 // generate token
-                const token = generateToken(data)
+                const token = await generateToken(data)
+                
                 res.json({ token: token, message: 'success' })
 
             } else {
