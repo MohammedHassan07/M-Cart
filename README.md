@@ -4,13 +4,13 @@ MCart is a E-commerce web application built using HTML, CSS, Javascript in front
 
 # Note
 As Frontend is built in HTML, CSS and Javascript I dont use any other server
-to serve the layout files, I start directly development server in VS Code.
+to serve the layout files, I start directly development server in\ VS Code.
 
 ## Installation
 
-Download the zip file
-Use the package manager [npm] to install the packages.
-Download MongoDB and create database named M-Cart
+Download the zip file\
+Use the package manager [npm] to install the packages.\
+Download MongoDB and create database named M-Cart\
 Navigate to Backend folder and run the command
 ```
 npm install 
