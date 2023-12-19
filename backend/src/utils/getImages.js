@@ -1,10 +1,11 @@
 import fs from 'fs'
 
-const getImgSrc = async () => {
+// retrive image from folder
+const getImgSrc = async (location) => {
 
     try {
 
-        const imgSrc = await fs.readFile('../public/images', { encoding: 'base64' })
+        const imgSrc = await fs.readFile(location, { encoding: 'base64' })
 
         return imgSrc
 

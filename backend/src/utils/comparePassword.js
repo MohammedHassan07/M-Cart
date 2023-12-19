@@ -1,5 +1,7 @@
 import bcryptjs  from 'bcryptjs'
 
+// we cannot use it as middleware because middleware is used in between req, and res
+
 const comparePassword = async (password) => {
 
     const salt = bcryptjs.genSaltSync(10)
