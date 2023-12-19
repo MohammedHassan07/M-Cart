@@ -2,7 +2,7 @@
 
 MCart is a E-commerce web application built using HTML, CSS, Javascript in frontend and Express, MongoDB in backend with Payment Integration
 
-#Note
+# Note
 As Frontend is built in HTML, CSS and Javascript I dont use any other server
 to serve the layout files, I start directly development server in VS Code.
 
