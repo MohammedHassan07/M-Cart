@@ -4,29 +4,38 @@ import { sendData } from "./utils/sendData.js"
 
 // continue button, email input
 const btnContinue = document.getElementById('btn-coninue')
-const emailInput = document.getElementById('email-input')
+const dataInput = document.getElementById('email-input')
+const passwordInput = document.getElementById('password')
 const error = document.getElementById('error-box')
 btnContinue.addEventListener('click', async (event) => {
 
     event.preventDefault()
 
-    const email = emailInput.value
-    if (email === '') {
+    const data = dataInput.value
+    const password = passwordInput.value
+
+    if (data === '' || password == '') {
 
         error.style.display = 'flex'
     } else {
 
         error.style.display = 'none'
-        console.log(email)
 
         try {
 
-            const url = ''
-            const response = await sendData({ email: email })
-            console.log('logIn: ', response)
+            const url = 'http://localhost:3000/user/login'
+
+            const response = await sendData(url, { data: data, password: password, type: `${data}` })
+
+            const { token } = response
+            window.localStorage.setItem('token', token)
+
+            window.location.replace('http://127.0.0.1:5500/Frontend/html/home.html')
+
+            // console.log('logIn: ', response)
 
         } catch (error) {
-            console.log(error.message)
+            console.log('logIn: ', error.message)
         }
     }
 })

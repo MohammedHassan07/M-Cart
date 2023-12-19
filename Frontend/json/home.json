@@ -1,0 +1,60 @@
+{
+    "homePage": {
+        "top-circular-slider": [
+            {
+                "id": "product-1",
+                "img": "",
+                "name": ""
+            },
+            {
+                "id": "product-2",
+                "img": "",
+                "name": ""
+            }
+        ],
+        "slider": [
+            {
+                "id": "img-1",
+                "img": ""
+            },
+            {
+                "id": "img-1",
+                "img": ""
+            }
+        ],
+        "bankPoster": [
+            {
+                "id": "bank-1",
+                "img": ""
+            },
+            {
+                "id": "bank-2",
+                "img": ""
+            }
+        ],
+        "cards": [
+            {
+                "id": "card-1",
+                "heading": "",
+                "img": "",
+                "seeMore": "link to products of that card"
+            },
+            {
+                "id": "card-2",
+                "heading": "",
+                "img": "",
+                "seeMore": "link to products of that card"
+            }
+        ],
+        "card-slider": [
+            {
+                "id": "card-1",
+                "link": "link to open products"
+            },
+            {
+                "id": "card-2",
+                "link": "link to open products"
+            }
+        ]
+    }
+}

@@ -2,7 +2,7 @@
 // send data to server, it acceptes only objects
 export async function sendData(url, dataObj) {
 
-    console.log('sendData: ', dataObj)
+    // console.log('sendData: ', dataObj)
     
     const res = await fetch(url, {
 
