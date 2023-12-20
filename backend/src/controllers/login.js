@@ -37,7 +37,7 @@ const login = async (req, res) => {
             }
         } else {
 
-            res.json({ message: 'We cannot find an account with that email address ' })
+            res.json({ message: `We cannot find an account with that ${type} ` })
         }
 
 

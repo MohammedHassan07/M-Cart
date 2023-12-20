@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs from 'fs/promises'
 
 // retrive image from folder
 const getImgSrc = async (location) => {

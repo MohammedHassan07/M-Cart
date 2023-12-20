@@ -1,32 +1,48 @@
-import homePage from '../models/home-page-model'
-import getImageHandler from '../utils/getImagesHandler'
+import homePage from '../models/home-page-model.js'
+import imageHandler from '../utils/getImagesHandler.js'
 
 const home = async (req, res) => {
 
     try {
 
         const response = await homePage.find()
-        let { topCircularSlider, slider, bankPoster, cards, cardSlider } = response
 
-        const bankPosterLoc = '../public/images/bankPoster'
-        const cardsLoc = '../public/images/cards'
-        const cardSliderLoc = '../public/images/cardSlider'
-        const sliderLoc = '../public/images/slider'
-        const topCircularLoc = '../public/images/topCirularSlider'
+        // const bankPosterLoc = './src/public/images/bankPoster'
+        const cardsLoc = './src/public/images/cards'
+        const cardSliderLoc = './src/public/images/cardSlider'
+        const sliderLoc = './src/public/images/slider'
+        const topCircularLoc = './src/public/images/topCircularSlider/'
 
-        topCircularSlider = await getImageHandler(topCircularSlider, topCircularLoc)
-        slider = await getImageHandler(topCircularSlider, sliderLoc)
-        bankPoster = await getImageHandler(topCircularSlider, bankPosterLoc)
-        cards = await getImageHandler(topCircularSlider, cardsLoc)
-        cardSlider = await getImageHandler(topCircularSlider, cardSliderLoc)
+        // const bankPoster = await getImageHandler(response, bankPosterLoc)
+        const cards = await imageHandler(response, cardsLoc)
+        const cardSlider = await imageHandler(response, cardSliderLoc)
+        const slider = await imageHandler(response, sliderLoc)
+        const topCircularSlider = await imageHandler(response, topCircularLoc)
 
-        res.status(200).json({ topCircularSlider, slider, bankPoster, cards, cardSlider })
-        console.log(topCircularSlider, slider, bankPoster, cards, cardSlider)
+        res.status(200).json({ cards, cardSlider, slider, topCircularSlider, message: 'success' })
 
     } catch (error) {
         console.log('home controller: ', error.message)
-        res.render()
+
+        // to display error page
+        // res.render()
     }
 }
 
-export default home
+// upload data in mongodb for homePage
+const uploadImg = async (req, res) => {
+
+    try {
+
+        const { type, data } = req.body
+        const newData = new homePage({ type, data })
+
+        const response = await newData.save()
+        res.status(200).json({ response })
+    } catch (error) {
+        console.log('upload image: ', error.message)
+    }
+}
+const nav = { home, uploadImg }
+
+export default nav

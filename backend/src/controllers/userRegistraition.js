@@ -7,16 +7,15 @@ const register = async (req, res) => {
 
     try {
 
-        const { name, email, password, mobile, type } = req.body
+        const { name, data, password, type } = req.body
       
-
         let user;
-        if (type === email) {
+        if (type === 'email') {
 
-            user = await userModel.findOne({ email })
+            user = await userModel.findOne({ email: data })
         } else {
 
-            user = await userModel.findOne({ mobile })
+            user = await userModel.findOne({ mobile: data })
         }
         if (user) {
 
@@ -25,29 +24,27 @@ const register = async (req, res) => {
 
             const pass = await hashPassword(password)
 
-            let data;
-            if (type === email) {
+            let newData;
+            if (type === 'email') {
 
-                data = { name: name, email: email, password: pass }
+                newData = { name: name, email: data, password: pass }
             } else {
 
-                data = { name: name, mobile: mobile, password: pass }
+                newData = { name: name, mobile: data, password: pass }
             }
-            const userData = userModel(data)
-
-            // console.log(userData)
+            const userData = userModel(newData)
 
             const response = await userData.save()
 
             // generate jwt
-            const token = await generateToken(email || mobile)
+            const token = await generateToken(data)
 
-            res.status(201).json({ message: 'Success', token: token, data: response })
+            res.status(201).json({ message: 'success', token: token, data: response })
             // console.log(response)
         }
 
     } catch (error) {
-        console.log(error.message)
+        console.log('registerUser: ', error.message)
         res.status(500).json({ message: 'Internal server error' })
     }
 }
