@@ -71,8 +71,8 @@ li a {
     gap: 35px;
     background-color: var(--secondary-bg);
     text-align: -moz-center;
-    color: var(--white-primary); 
-     padding: 11px 0px 11px 0px;
+    color: var(--white-primary);
+    padding: 11px 0px 11px 0px;
 }
 
 .round-image {
@@ -102,16 +102,39 @@ li a {
     font-weight: 500;
 }
 
-.hero {
+.hero-slider {
 
     width: 100%;
     height: 40vh;
+    position: relative;
+    overflow: hidden;
 }
 
-.hero img {
+.slider-img {
 
     width: 100%;
     height: 100%;
+    position: absolute;
+    transition: all 0.3s ease-in;
+}
+
+#btn-prev {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 117px;
+
+    cursor: pointer;
+}
+
+#btn-next {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 146px;
+    cursor: pointer;
 }
 
 .bank-container {
@@ -161,6 +184,11 @@ li a {
     color: var(--text-3);
     font-size: 13px;
     text-align: left;
+}
+
+.card-slider {
+
+    position: relative;
 }
 
 .back-top {
